@@ -1,0 +1,11 @@
+*.o
+*.d
+obj
+*.swp
+.DS_*
+._.*
+.vscode
+ClapTrap
+ScavTrap
+FragTrap
+DiamondTrap
