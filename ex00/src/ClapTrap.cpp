@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:59:24 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/10 16:55:39 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:17:21 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,42 @@ unsigned int	ClapTrap::getEnergy(void) const
 unsigned int	ClapTrap::getAttack(void) const
 {
 	return (this->attack_damage);
+}
+
+/*
+ * Members funtions
+*/
+void	ClapTrap::attack(const std::string &target)
+{
+	if (this->getEnergy() < 1)
+	{
+		std::cout << this->getName() << ": Can't do more damage:"
+			<< "energy points 0" << std::endl;
+		return ;
+	}
+	if (this->getHits() < 1)
+	{
+		std::cout << this->getName() << ": is dead :C" << std::endl;
+		return ;
+	}
+	std::cout << "ClapTrap " << this->getName() << "attacks " << target
+		<< ", causing " << this->getAttack() << " points of damage!"
+		<< std::endl;
+	this->setEnergy(this->getEnergy() - 1);
+}
+
+void	ClapTrap::takeDamage(unsigned int amount)
+{
+	if (amount >= this->getHits())
+		this->setHits(0);
+	if ((this->getHits() < 1))
+	{
+		std::cout << this->getName() << ": is dead :C" << std::endl;
+		return ;
+	}
+	std::cout  << "Take damages :" << amount << " " << this->getName()
+		<< ": I'm dying!!!!!" << std::endl;
+	this->setHits(this->getHits() - amount);
 }
 
 std::ostream	&operator<<(std::ostream &os, const ClapTrap &obj)
