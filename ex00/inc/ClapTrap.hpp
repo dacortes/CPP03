@@ -6,13 +6,24 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 09:00:08 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/08 18:59:49 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:52:54 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
+/******************************************************************************/
+/*                            INCLUDES                                        */
+/******************************************************************************/
+
+#include <string>
+#include <iostream>
+#include <cstdlib>
+
+/******************************************************************************/
+/*                            CLASS                                           */
+/******************************************************************************/
 class	ClapTrap
 {
 	private:
@@ -25,14 +36,16 @@ class	ClapTrap
 		 * Orthodox Canonical Form
 		*/
 		ClapTrap(void);
-		ClapTrap(ClapTrap &obj);
 		ClapTrap(const ClapTrap &obj);
-		ClapTrap &operator=(const ClapTrap &obj)
-		~ClapTrao(void);
+		ClapTrap &operator=(const ClapTrap &obj);
+		~ClapTrap(void);
 		/*
 		 * Set Methods 
 		*/
-
+		void	setName(std::string _name);
+		void	setHits(unsigned int _hits);
+		void	setEnergy(unsigned int _energy);
+		void	setAttack(unsigned int _attack);
 		/*
 		 * Get Methods 
 		*/
@@ -46,6 +59,8 @@ class	ClapTrap
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
 };
 
+std::ostream &operator<<(std::ostream &os, const ClapTrap &obj);
 #endif
