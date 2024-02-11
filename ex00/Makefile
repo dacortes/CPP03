@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 08:57:26 by dacortes          #+#    #+#              #
-#    Updated: 2024/02/10 09:38:46 by dacortes         ###   ########.fr        #
+#    Updated: 2024/02/11 17:44:54 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ dir:
 
 $(D_OBJ)/%.o:$(D_SRC)/%.cpp Makefile
 	$(CPP) $(FLAGS) -MMD -c $< -o $@ $(INC)
-	printf "\r$(ligth)$(B)file:$(E) $(ligth)$< $(B)to$(E) $(ligth)$@$(E)      "
+	printf "\r$(ligth)$(B)file:$(E) $(ligth)$< $(B)to$(E) $(ligth)$@$(E)       "
 
 $(NAME): $(OBJ) 
 	$(CPP) $(FLAGS) $(INC) $(OBJ) -o $(NAME)

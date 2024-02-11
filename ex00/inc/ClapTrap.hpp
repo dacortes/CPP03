@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 09:00:08 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/11 16:03:29 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/11 17:45:54 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@
 /******************************************************************************/
 
 # define E "\033[m"                 //end
-# define R "\033[1;31m"    			//red
-# define G "\033[1;32m"    			//green
-# define Y "\033[1;33m"    			//yellow
+# define R "\033[1m\033[1;31m"    			//red
+# define G "\033[1m\033[1;32m"    			//green
+# define Y "\033[1m\033[1;33m"    			//yellow
 # define B "\033[1;34m"    			//blue
 # define T "\033[1m\033[1;35m"		//Turquesa
 # define C "\033[1;36m"				//Cyan
