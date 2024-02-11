@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:59:24 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/10 18:17:21 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/11 16:03:26 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	ClapTrap::attack(const std::string &target)
 {
 	if (this->getEnergy() < 1)
 	{
-		std::cout << this->getName() << ": Can't do more damage:"
+		std::cout << this->getName() << ": Can't do more damage: "
 			<< "energy points 0" << std::endl;
 		return ;
 	}
@@ -127,6 +127,22 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	std::cout  << "Take damages :" << amount << " " << this->getName()
 		<< ": I'm dying!!!!!" << std::endl;
 	this->setHits(this->getHits() - amount);
+}
+
+void	beRepaired(unsigned int amount)
+{
+	if (this->getEnergy() < 1)
+	{
+		std::cout << this->getName() << ": Cannot repair hit points: " 
+			<< "energy points 0" << std::endl;
+		return ;
+	}
+	if ((this->getHits() < 1))
+	{
+		std::cout << this->getName() << ": is dead :C" << std::endl;
+		return ;
+	}
+	this->setHits(this->getHits() + amount);
 }
 
 std::ostream	&operator<<(std::ostream &os, const ClapTrap &obj)
