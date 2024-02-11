@@ -6,7 +6,7 @@
 #    By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/08 08:57:26 by dacortes          #+#    #+#              #
-#    Updated: 2024/02/11 17:44:54 by dacortes         ###   ########.fr        #
+#    Updated: 2024/02/11 18:03:17 by dacortes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 #                               VARIABLES                                      #
 ################################################################################
 
-NAME = Fixed
+NAME = ClapTrap
 CPP = c++
 FLAGS = -Wall -Werror -Wextra -g -pedantic -std=c++98 \
 	-fsanitize=address
