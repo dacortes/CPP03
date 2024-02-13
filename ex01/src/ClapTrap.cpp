@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:59:24 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/13 16:10:38 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:37:43 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ ClapTrap::ClapTrap(const ClapTrap &obj)
 	*this = obj;
 	std::cout <<"ClapTrap " << obj.getName() << ": Copy constructor called"
 		<< std::endl;
+}
+
+ClapTrap::ClapTrap(std::string _name)
+{
+	this->name = _name;
+	this->hits_points = 10;
+	this->energy_points = 10;
+	this->attack_damage = 0;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)

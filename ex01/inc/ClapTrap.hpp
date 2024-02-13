@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 09:00:08 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/13 16:10:41 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:35:50 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ class	ClapTrap
 		*/
 		ClapTrap(void);
 		ClapTrap(const ClapTrap &obj);
+		ClapTrap(std::string _name);
 		ClapTrap &operator=(const ClapTrap &obj);
 		~ClapTrap(void);
 		/*

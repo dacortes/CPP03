@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:58:21 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/13 18:17:38 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:56:01 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,38 @@ void	test_takeDamage(ClapTrap &obj)
 		<< std::endl;
 }
 
+void	test_init_constructor(ClapTrap &clap, ScavTrap &Scav)
+{
+	std::cout << "----------------------------------" << std::endl;
+	std::cout << T << "Test init" << E << std::endl;
+	std::cout << clap << std::endl;
+	std::cout << Scav << std::endl;
+	std::cout << "----------------------------------" << std::endl;
+}
+
+void	combat_knife(ClapTrap &clap, ScavTrap &scav)
+{
+	std::cout << "----------------------------------" << std::endl;
+	std::cout << T << "Combat_knife" << E << std::endl;
+	clap.setAttack(50);
+	
+	clap.attack(scav.getName());
+	scav.setHits(clap.getAttack());
+	std::cout << O << "current hits points: " << scav.getName() << E
+		<< " " << scav.getHits() << std::endl;
+	scav.attack(clap.getName());
+	clap.setHits(scav.getAttack());
+	std::cout << Y << "current hits points: " << clap.getName() << E
+		<< " " << clap.getHits() << std::endl;
+	std::cout << "----------------------------------" << std::endl;
+}
+
 int	main(void)
 {
-	/*ClapTrap	foo;
+	ClapTrap	foo("eralonso");
+	ScavTrap	fooo("frankgar");
 
-	foo.setName("foo");
-	foo.attack("eralonso");
-	test_energy_consumption_beRepaired(foo);
-	test_takeDamage(foo);
-	foo.attack("eralonso");
-	test_energy_consumption_beRepaired(foo);*/
-	ScavTrap foo("frankgar");
-
-	std::cout << foo << std::endl;
+	test_init_constructor(foo, fooo);
+	combat_knife(foo, fooo);
 	return (EXIT_SUCCESS);
 }
