@@ -6,11 +6,11 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:58:21 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/11 18:04:11 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:08:59 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ClapTrap.hpp"
+#include "../inc/ScavTrap.hpp"
 
 void	test_energy_consumption_beRepaired(ClapTrap &obj)
 {
@@ -32,13 +32,18 @@ void	test_takeDamage(ClapTrap &obj)
 
 int	main(void)
 {
-	ClapTrap	foo;
+	/*ClapTrap	foo;
 
 	foo.setName("foo");
 	foo.attack("eralonso");
 	test_energy_consumption_beRepaired(foo);
 	test_takeDamage(foo);
 	foo.attack("eralonso");
-	test_energy_consumption_beRepaired(foo);
+	test_energy_consumption_beRepaired(foo);*/
+	ScavTrap foo("frankgar");
+
+
+	std::cout << "queso foo: " << foo.getHits() << std::endl;
+	std::cout << foo << std::endl;
 	return (EXIT_SUCCESS);
 }
