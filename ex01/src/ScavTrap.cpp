@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:39:20 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/13 16:01:50 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:21:47 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 * Orthodox Canonical Form
 */
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << O << "ScavTrap: " << E << "Default constructor called"
 		<< std::endl;
@@ -23,14 +23,23 @@ ScavTrap::ScavTrap(void)
 	this->hits_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
-	/*this->setHits(100);
-	this->setEnergy(50);
-	this->setAttack(20);*/
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap()
 {
+	std::cout << O << "ScavTrap: " << E << "Constructor called"
+		<< std::endl;
 	this->setName(name);
+	this->hits_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &obj)
+{
+	*this = obj;
+	std::cout << O << "ScavTrap:" << E << obj.getName()
+		<< " Copy constructor called" << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &obj)

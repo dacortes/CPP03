@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:58:21 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/13 16:08:59 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:17:38 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ int	main(void)
 	test_energy_consumption_beRepaired(foo);*/
 	ScavTrap foo("frankgar");
 
-
-	std::cout << "queso foo: " << foo.getHits() << std::endl;
 	std::cout << foo << std::endl;
 	return (EXIT_SUCCESS);
 }
