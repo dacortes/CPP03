@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 11:39:20 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/13 18:57:09 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/14 18:32:24 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap()
 	this->attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &obj)
+ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap()
 {
 	*this = obj;
 	std::cout << O << "ScavTrap:" << E << obj.getName()
