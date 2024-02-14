@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:58:21 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/13 18:56:01 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/14 18:27:40 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,24 @@ void	test_takeDamage(ClapTrap &obj)
 	std::cout << O << "current hits points: " << E << obj.getHits()
 		<< std::endl;
 	for (int i = 0; i < 11; i++)
+		obj.takeDamage(i);
+	std::cout << O << "current hits points: " << E << obj.getHits()
+		<< std::endl;
+}
+
+void	test_energy_consumption_beRepaired_scav(ScavTrap &obj)
+{
+	std::cout << O << "current energy: " << E << obj.getEnergy() << std::endl;
+	for (int i = 0; i < 11; i++)
+		obj.beRepaired(i);
+	std::cout << O << "Energy: " << E << obj.getEnergy() << std::endl;
+}
+
+void	test_takeDamage_scav(ScavTrap &obj)
+{
+	std::cout << O << "current hits points: " << E << obj.getHits()
+		<< std::endl;
+	for (int i = 0; i < 19; i++)
 		obj.takeDamage(i);
 	std::cout << O << "current hits points: " << E << obj.getHits()
 		<< std::endl;
@@ -63,5 +81,7 @@ int	main(void)
 
 	test_init_constructor(foo, fooo);
 	combat_knife(foo, fooo);
+	test_energy_consumption_beRepaired_scav(fooo);
+	test_takeDamage_scav(fooo);
 	return (EXIT_SUCCESS);
 }
