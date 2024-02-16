@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 08:58:21 by dacortes          #+#    #+#             */
-/*   Updated: 2024/02/14 18:27:40 by dacortes         ###   ########.fr       */
+/*   Updated: 2024/02/16 16:56:40 by dacortes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void	combat_knife(ClapTrap &clap, ScavTrap &scav)
 	clap.setAttack(50);
 	
 	clap.attack(scav.getName());
-	scav.setHits(clap.getAttack());
+	scav.takeDamage(clap.getAttack());
 	std::cout << O << "current hits points: " << scav.getName() << E
 		<< " " << scav.getHits() << std::endl;
 	scav.attack(clap.getName());
-	clap.setHits(scav.getAttack());
+	clap.takeDamage(scav.getAttack());
 	std::cout << Y << "current hits points: " << clap.getName() << E
 		<< " " << clap.getHits() << std::endl;
 	std::cout << "----------------------------------" << std::endl;
